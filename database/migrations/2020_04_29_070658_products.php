@@ -20,6 +20,7 @@ class Products extends Migration
             $table->integer('price');
             $table->string('category');
             $table->string('desc');
+            $table->string('image');
         });
     }
 
