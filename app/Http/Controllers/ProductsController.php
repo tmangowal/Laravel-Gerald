@@ -15,4 +15,10 @@ class ProductsController extends Controller
 
         return view('product.index', ['products' => $products]);
     }
+
+    public function detail ($id) {
+        $product = Product::find($id);
+
+        return view('product.detail', ['product' => $product]);
+    }
 }
