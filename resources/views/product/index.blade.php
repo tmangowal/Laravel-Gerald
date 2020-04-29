@@ -38,6 +38,7 @@
               <p class="mt-3">{{ $product->productName }}</p>
               <h5>IDR {{ $product->price }}</h5>
               <p class="small">Category: {{ $product->category }} </p>
+              <p>{{ $product->cart[0]->quantity }}</p>
           </div>
           <div class="d-flex flex-row align-items-center justify-content-between mt-2">
               <div type="outlined" style="fontSize: 12px; padding: 4px 8px"> Buy
