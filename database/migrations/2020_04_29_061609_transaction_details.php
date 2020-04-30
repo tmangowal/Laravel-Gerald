@@ -19,6 +19,7 @@ class TransactionDetails extends Migration
             $table->integer('productId');
             $table->integer('price');
             $table->integer('quantity');
+            $table->timestamps();
         });
     }
 

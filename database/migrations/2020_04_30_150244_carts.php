@@ -18,6 +18,7 @@ class Carts extends Migration
             $table->integer('userId');
             $table->integer('productId');
             $table->integer('quantity');
+            $table->timestamps();
         });
     }
 

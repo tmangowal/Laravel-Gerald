@@ -21,6 +21,7 @@ class Products extends Migration
             $table->string('category');
             $table->string('desc');
             $table->string('image');
+            $table->timestamps();
         });
     }
 

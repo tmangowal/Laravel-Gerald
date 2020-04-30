@@ -28,6 +28,7 @@ class Transactions extends Migration
             $table->string('province');
             $table->integer('zip');
             $table->string('phone');
+            $table->timestamps();
         });
     }
 
