@@ -11,7 +11,19 @@ class CartsController extends Controller
     public function index(Request $request)
     {
         $cart = Cart::where(['userId'=>$request->userId])->get();
-        return view('cart.index', ['carts' => $cart, 'userId'=>$request->userId]);
+        $totalPrice = 0;
+        $qty = 0;
+        for ($i=0; $i < count($cart) ; $i++) {
+            $totalPrice += $cart[$i]->quantity * $cart[$i]->products->price;
+            $qty += $cart[$i]->quantity;
+        }
+        // $totalPrice = number_format($totalPrice, 2, ',', '.');
+        return view('cart.index', [
+            'carts' => $cart,
+            'userId'=>$request->userId,
+            'totalPrice'=>$totalPrice,
+            'qty' => $qty
+         ]);
     }
 
     public function editCart(Request $request)

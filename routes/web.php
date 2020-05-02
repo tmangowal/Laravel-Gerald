@@ -29,3 +29,5 @@ Route::get('/cart/edit/{cartId}', 'CartsController@editCart')->name('cartEdit');
 Route::get('/cart', 'CartsController@edit')->name('updateCart');
 Route::get('/deleteCart', 'CartsController@destroy')->name('destroyCart');
 Route::post('/cart/store', 'ProductsController@addToCart')->name('productStore');
+
+Route::post('/transaction', 'TransactionsController@create')->name('createTransaction');

@@ -9,4 +9,19 @@ class Transaction extends Model
     //
     protected $table = "transactions";
     protected $primaryKey = "id";
+    protected $fillable = [
+        'userId',
+        'price',
+        'quantity',
+        'status',
+        'userPayment',
+        'completedDate',
+        'fullName',
+        'address',
+         'city',
+        'district',
+        'province',
+        'zip',
+        'phone'
+    ];
 }
