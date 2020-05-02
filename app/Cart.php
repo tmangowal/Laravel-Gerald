@@ -12,7 +12,8 @@ class Cart extends Model
     protected $foreignKey = "productId";
     protected $fillable = ['productId','userId','quantity'];
 
-    public function product() {
-        return $this->belongsTo('App\Product');
+    public function products()
+    {
+        return $this->belongsTo('App\Product', 'productId');
     }
 }
