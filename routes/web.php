@@ -27,4 +27,5 @@ Route::get('/product/detail/{id}', 'ProductsController@detail')->name('productDe
 Route::get('/cart/{userId}', 'CartsController@index')->name('cart');
 Route::get('/cart/edit/{cartId}', 'CartsController@editCart')->name('cartEdit');
 Route::get('/cart', 'CartsController@edit')->name('updateCart');
+Route::get('/deleteCart', 'CartsController@destroy')->name('destroyCart');
 Route::post('/cart/store', 'ProductsController@addToCart')->name('productStore');

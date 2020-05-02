@@ -32,4 +32,11 @@ class CartsController extends Controller
             return redirect('/cart/edit/' + $request->cartId);
         }
     }
+
+    public function destroy(Request $request)
+    {
+        Cart::destroy($request->cartId);
+
+        return redirect("/cart/{$request->userId}");
+    }
 }

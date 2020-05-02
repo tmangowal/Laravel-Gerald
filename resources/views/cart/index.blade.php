@@ -29,7 +29,17 @@
           <input type="submit" value="Edit" class="btn btn-dark">
         </a>
       </td>
-      <td><input type="submit" value="Delete" class="btn btn-danger"></td>
+      <td>
+        <form action="/deleteCart" method="get">
+          {{ csrf_field() }}
+
+          <input type="text" class="d-none" value="{{ $cart->id }}"
+            name="cartId">
+          <input type="text" class="d-none" value="{{ Auth::user()->id }}"
+            name="userId">
+          <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+      </td>
     </tr>
     @endforeach
   </tbody>
