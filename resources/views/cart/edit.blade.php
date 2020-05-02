@@ -19,6 +19,8 @@
 
       <input type="number" name="cartId" value="{{ $cart[0]->id }}"
         class="d-none">
+      <input type="number" name="userId" value="{{ $cart[0]->userId }}"
+        class="d-none">
       <input type="number" name="newQty" class="form-control mt-4"
         placeholder="{{ $cart[0]->quantity }}">
       <input type="submit" class="btn btn-success mt-2" value="Save">

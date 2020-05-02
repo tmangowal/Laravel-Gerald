@@ -45,9 +45,11 @@
 
                     <ul class="navbar-nav">
                         <a href="/" class="mx-2">Home</a>
+                        @if (Auth::user())
                         <a href="/product" class="mx-2">Products</a>
                         <a href="/cart/{{ Auth::user()->id }}"
                             class="mx-2">Cart</a>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

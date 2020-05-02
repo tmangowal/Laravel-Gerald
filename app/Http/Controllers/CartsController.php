@@ -27,9 +27,9 @@ class CartsController extends Controller
         if ($request->newQty > 0) {
             $cart[0]->quantity = $request->newQty;
             $cart[0]->save();
-            return redirect('/home');
+            return redirect("/cart/{$request->userId}");
         } else {
-            return redirect('/cart/edit/' + $request->cartId);
+            return redirect("/cart/{$request->userId}");
         }
     }
 
