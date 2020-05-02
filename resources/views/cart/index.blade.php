@@ -2,6 +2,8 @@
 
 @section('body')
 
+@if (Auth::user()->id == $userId)
+
 <table class="table">
   <thead>
     <tr class="text-center">
@@ -10,7 +12,7 @@
       <th>Price</th>
       <th>Quantity</th>
       <th>Total Price</th>
-      <th>Action</th>
+      <th colspan="2">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -22,10 +24,17 @@
       <td>{{ $cart->products->price }}</td>
       <td>{{ $cart->quantity }}</td>
       <td>{{ $cart->quantity * $cart->products->price}}</td>
+      <td>
+        <a href="/cart/edit/{{ $cart->id }}">
+          <input type="submit" value="Edit" class="btn btn-dark">
+        </a>
+      </td>
       <td><input type="submit" value="Delete" class="btn btn-danger"></td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+@endif
 
 @endsection
