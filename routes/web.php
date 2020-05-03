@@ -31,3 +31,9 @@ Route::get('/deleteCart', 'CartsController@destroy')->name('destroyCart');
 Route::post('/cart/store', 'ProductsController@addToCart')->name('productStore');
 
 Route::post('/transaction', 'TransactionsController@create')->name('createTransaction');
+
+Route::get('/admin/product', 'AdminController@index')->middleware('isAdmin');
+Route::get('/admin/product/edit/{productId}', 'AdminController@editProduct')->middleware('isAdmin');
+Route::get('/admin/product/edit', 'AdminController@editProductDB')->middleware('isAdmin');
+Route::post('/admin/product', 'AdminController@createProduct')->middleware('isAdmin');
+Route::get('/admin/product/delete/{productId}', 'AdminController@deleteProduct')->middleware('isAdmin');
