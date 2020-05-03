@@ -50,6 +50,12 @@
                         <a href="/cart/{{ Auth::user()->id }}"
                             class="mx-2">Cart</a>
                         @endif
+                        @if (Auth::user())
+                        @if (Auth::user()->name == "admin")
+                        <a href="/admin/product" class="mx-2">Admin
+                            Dashboard</a>
+                        @endif
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
